@@ -35,12 +35,15 @@ df_sp <- data.frame(spec = sample(c("sp1", "sp2", "sp3"), 100, replace = TRUE),
 #Compute the Dsp for each species
 df_sp_dens <- dsp(data = df_sp, species = spec, distance = dis)
 
-#Display Dsp for each species
-dplyr::select(dplyr::distinct(df_sp_dens, spec, .keep_all = TRUE), -dis)
-#> # A tibble: 3 x 2
-#>   spec    Dsp
-#>   <chr> <dbl>
-#> 1 sp2    66.9
-#> 2 sp1    73.7
-#> 3 sp3    64.8
+#Display results
+head(df_sp_dens)
+#> # A tibble: 6 x 3
+#>   spec    dis   Dsp
+#>   <chr> <dbl> <dbl>
+#> 1 sp3   165.   69.9
+#> 2 sp2    65.6  76.2
+#> 3 sp1   123.   73.1
+#> 4 sp3   123.   69.9
+#> 5 sp3   161.   69.9
+#> 6 sp1   105.   73.1
 ```
