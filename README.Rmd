@@ -18,7 +18,9 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of qeb99r is to provide tools for quantitative ethnobotany
+qeb99r stands for quantitative ethnobotany 1999 in R. The goal of the qeb99r is to provide a central package which implements the methods outlined in:
+
+Höft, M., Barik, S. K., & Lykke, A. M. (1999). Quantitative Ethnobotany: Applications of Multivariate and Statistical Analyses in Ethnobotany.
 
 ## Installation
 
@@ -45,3 +47,10 @@ df_sp_dens <- dsp(data = df_sp, species = spec, distance = dis)
 #Display results
 head(df_sp_dens)
 ```
+
+The dsp function can also be used to compute the dsp on a numeric vector of distances for one species
+```{r}
+vec_sp <- rnorm(33, 100, 25)
+dsp(distance = vec_sp)
+```
+
